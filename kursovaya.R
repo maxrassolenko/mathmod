@@ -44,7 +44,7 @@ teach = sample(row_numbers, floor(length(dx$date)*.7))
 test = row_numbers[-teach] 
 teaching_dx_unq = dx[teach,] 
 testing_dx_unq = dx[test,] 
-
+##строим модель
 model1 = lm(h2o_flux ~ (Tau + rand_err_Tau + LE + qc_LE + rand_err_LE + h2o_flux + qc_h2o_flux + rand_err_h2o_flux + h2o_time_lag + sonic_temperature + air_temperature + air_density + air_molar_volume + es + RH + VPD + max_speed + TKE + un_Tau + un_LE + un_h2o_flux + w_var + h2o_var)^2, data = dx)
 model1
 coef(model1) 
